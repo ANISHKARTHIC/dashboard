@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cloudburst Detection Dashboard</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div class="logo">🌩 Cloudburst</div>
+    <ul>
+      <li><a class="active">Dashboard</a></li>
+      <li><a href="#">Sensors</a></li>
+      <li><a href="#">Alerts</a></li>
+    </ul>
+  </nav>
+
+  <!-- HEADER SECTION -->
+  <header class="header-section">
+    <h1>Cloudburst Detection Dashboard</h1>
+    <p>Real-time Monitoring • Risk Analysis • Live Sensor Feed</p>
+  </header>
+
+  <!-- MAIN CONTAINER -->
+  <div class="container">
+
+    <!-- LIVE CARDS -->
+    <div class="cards">
+      <div class="card glass">
+        <h2>Temperature</h2>
+        <p id="temp" class="metric">-- °C</p>
+      </div>
+
+      <div class="card glass">
+        <h2>Humidity</h2>
+        <p id="hum" class="metric">-- %</p>
+      </div>
+
+      <div class="card glass">
+        <h2>Rainfall</h2>
+        <p id="rain" class="metric">-- mm/hr</p>
+      </div>
+
+      <div class="card glass">
+        <h2>Soil Condition</h2>
+        <p id="soil" class="metric">--</p>
+      </div>
+
+      <div class="card glass">
+        <h2>Ultrasonic</h2>
+        <p id="ult" class="metric">-- cm</p>
+      </div>
+
+      <div class="card risk-card glass" id="risk">
+        <h2>Risk Status</h2>
+        <p id="risk-text" class="metric">--</p>
+      </div>
+    </div>
+
+    <!-- UPDATE TIME -->
+    <div class="updated-box">
+      <p>Last Updated: <span id="updated">--</span></p>
+
+      <button id="simulateBtn">Simulate Sensor Data</button>
+      <button id="clearBtn">Clear Chart</button>
+    </div>
+
+    <!-- CHART -->
+    <div class="chart-wrapper glass">
+      <h3>Live Sensor Graph</h3>
+      <div class="chart-area">
+        <canvas id="sensorChart"></canvas>
+      </div>
+    </div>
+
+  </div>
+
+  <footer>
+    <p> 2025 Cloudburst Detection System • AI + IoT Monitoring</p>
+  </footer>
+
+  <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
