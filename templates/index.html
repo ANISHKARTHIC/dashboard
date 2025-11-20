@@ -55,14 +55,10 @@
       </div>
 
       <div class="card glass">
-        <h2>Ultrasonic</h2>
-        <p id="ult" class="metric">-- cm</p>
+        <h2>Radar</h2>
+        <p id="ult" class="metric">--</p>
       </div>
 
-      <div class="card risk-card glass" id="risk">
-        <h2>Risk Status</h2>
-        <p id="risk-text" class="metric">--</p>
-      </div>
     </div>
 
     <!-- UPDATE TIME -->
@@ -81,6 +77,15 @@
       </div>
     </div>
 
+  </div>
+
+  <!-- Cloud Burst Popup -->
+  <div id="cloudburstPopup" style="position: fixed; inset: 0; display: none; align-items: center; justify-content: center; background: rgba(0,0,0,0.4); z-index: 1000;">
+    <div style="background:#0f172a; color:#e2e8f0; padding: 24px 28px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); max-width: 90%; text-align:center;">
+      <h3 style="margin: 0 0 8px 0; font-weight:700;">Cloud Burst</h3>
+      <p id="cloudburstMsg" style="margin: 0 0 16px 0;">Radar value exceeded threshold (> 6)</p>
+      <button id="cloudburstClose" style="background:#ff4d67; color:#fff; border:none; padding:8px 14px; border-radius:8px; cursor:pointer;">Close</button>
+    </div>
   </div>
 
   <footer>
